@@ -7,7 +7,30 @@ void main() => runApp(
 class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          leading: FlatButton(
+            onPressed: () {
+              print('hello');
+            },
+            child: Icon(
+              Icons.menu,
+              color: Colors.white,
+            ),
+          ),
+          title: Text('MENU'),
+        ),
+        body: Container(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            print('hello');
+          },
+          child: Icon(
+            Icons.add,
+          ),
+        ),
+      ),
     );
   }
 }
