@@ -17,6 +17,8 @@ class Answer extends StatelessWidget {
           answerText,
           style: TextStyle(
             color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
           ),
         ),
         onPressed: selectHandler,
