@@ -1,56 +1,49 @@
 import 'package:flutter/material.dart';
 
-import './quiz.dart';
-import './result.dart';
+import 'package:flutter_complete_guide/question.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _MyAppState createState() {
+    return _MyAppState();
+  }
 }
 
 class _MyAppState extends State<MyApp> {
-  var _questionIndex = 0;
-
-  void _answerChosen() {
-    setState(() {
-      _questionIndex++;
-    });
-  }
+  final List<String> _questions = [
+    'What\'s your favorite color',
+    'What\'s your favorite animal',
+  ];
 
   @override
   Widget build(BuildContext context) {
-    const _questions = [
-      {
-        'questionText': 'What\'s your favorite colour?',
-        'answers': ['Black', 'Red', 'Green', 'Blue'],
-      },
-      {
-        'questionText': 'What\'s your favorite animal?',
-        'answers': ['Rabbit', 'Snake', 'Elephant', 'Lion'],
-      },
-      {
-        'questionText': 'Who\'s your favorite instructor?',
-        'answers': ['Max', 'Max', 'Max', 'Max'],
-      },
-    ];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text(
-            'My First App',
-          ),
+          title: Text('MyFirstApp'),
+          leading: Icon(Icons.menu),
         ),
-        body: _questionIndex < _questions.length
-            ? Quiz(
-                answerChosen: _answerChosen,
-                questionIndex: _questionIndex,
-                questions: _questions,
-              )
-            : Result(),
+        body: Column(
+          children: [
+            Question(
+              _questions[1],
+            ),
+            RaisedButton(
+              onPressed: null,
+              child: Text('answer1'),
+            ),
+            RaisedButton(
+              onPressed: null,
+              child: Text('answer1'),
+            ),
+            RaisedButton(
+              onPressed: null,
+              child: Text('answer1'),
+            ),
+          ],
+        ),
       ),
     );
   }
