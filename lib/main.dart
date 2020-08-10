@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_complete_guide/answer.dart';
 import 'package:flutter_complete_guide/question.dart';
 
 void main() => runApp(MyApp());
@@ -12,10 +13,24 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final List<String> _questions = [
-    'What\'s your favorite color',
-    'What\'s your favorite animal',
+  static var _questions = [
+    {
+      'question': 'What\'s your favorite color',
+      'answers': ['White', 'Green', 'Orange', 'Blue'],
+    },
+    {
+      'question': 'What\'s your favorite animal',
+      'answers': ['Lion', 'Elephant', 'Bear'],
+    },
   ];
+
+  var _questionIndex = 0;
+
+  void _answerChosen() {
+    setState(() {
+      _questionIndex++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,20 +43,11 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: [
             Question(
-              _questions[1],
+              _questions[_questionIndex]['question'],
             ),
-            RaisedButton(
-              onPressed: null,
-              child: Text('answer1'),
-            ),
-            RaisedButton(
-              onPressed: null,
-              child: Text('answer1'),
-            ),
-            RaisedButton(
-              onPressed: null,
-              child: Text('answer1'),
-            ),
+            ...(_questions[_questionIndex]['answers'] as List<Object>)
+                .map((answer) => Answer(answer, _answerChosen))
+                .toList()
           ],
         ),
       ),
