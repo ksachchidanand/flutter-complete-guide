@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_complete_guide/answer.dart';
-import 'package:flutter_complete_guide/question.dart';
+import 'package:flutter_complete_guide/quiz.dart';
+import 'package:flutter_complete_guide/result.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,6 +32,12 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  void _reset() {
+    setState(() {
+      _questionIndex = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,16 +46,13 @@ class _MyAppState extends State<MyApp> {
           title: Text('MyFirstApp'),
           leading: Icon(Icons.menu),
         ),
-        body: Column(
-          children: [
-            Question(
-              _questions[_questionIndex]['question'],
-            ),
-            ...(_questions[_questionIndex]['answers'] as List<Object>)
-                .map((answer) => Answer(answer, _answerChosen))
-                .toList()
-          ],
-        ),
+        body: _questionIndex < _questions.length
+            ? Quiz(
+                questions: _questions,
+                questionIndex: _questionIndex,
+                answerChosen: _answerChosen,
+              )
+            : Result(_reset),
       ),
     );
   }
