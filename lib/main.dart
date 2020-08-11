@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/questionList.dart';
 
 import 'package:flutter_complete_guide/quiz.dart';
 import 'package:flutter_complete_guide/result.dart';
@@ -13,16 +14,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  static var _questions = [
-    {
-      'question': 'What\'s your favorite color',
-      'answers': ['White', 'Green', 'Orange', 'Blue'],
-    },
-    {
-      'question': 'What\'s your favorite animal',
-      'answers': ['Lion', 'Elephant', 'Bear'],
-    },
-  ];
+  static var _questions = QuestionList().questionList;
 
   var _questionIndex = 0;
 
