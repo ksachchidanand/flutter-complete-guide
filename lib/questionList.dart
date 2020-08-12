@@ -9,19 +9,19 @@ class QuestionList {
         },
         {
           'text': 'Hosting 3-course curated dinners',
-          'score': 1,
+          'score': 5,
         },
         {
           'text': 'Making a warm cup of tea',
-          'score': 1,
+          'score': 2,
         },
         {
           'text': 'Catching up with friends or volunteering',
-          'score': 1,
+          'score': 3,
         },
         {
           'text': 'Going on a date',
-          'score': 2,
+          'score': 4,
         },
       ],
     },
@@ -30,15 +30,15 @@ class QuestionList {
       'answers': [
         {
           'text': '6am-12pm',
-          'score': 1,
+          'score': 4,
         },
         {
           'text': '12pm-6pm',
-          'score': 1,
+          'score': 2,
         },
         {
           'text': '6pm-Midnight',
-          'score': 1,
+          'score': 3,
         },
         {
           'text': 'Midnight-6am',
@@ -51,19 +51,19 @@ class QuestionList {
       'answers': [
         {
           'text': 'Gilmore Girls',
-          'score': 1,
+          'score': 3,
         },
         {
           'text': 'Parks & Rec',
-          'score': 1,
+          'score': 2,
         },
         {
           'text': 'Always Be My Maybe',
-          'score': 1,
+          'score': 5,
         },
         {
           'text': 'Tales by Light',
-          'score': 1,
+          'score': 4,
         },
         {
           'text': 'Queer Eye',
@@ -80,14 +80,15 @@ class QuestionList {
         },
         {
           'text': 'Run the World – Beyonce ',
-          'score': 1,
+          'score': 3,
         },
         {
           'text': 'Photograph – Ed Sheeran',
-          'score': 1,
+          'score': 4,
         },
         {
           'text': 'Can’t Knock the Hustle – Jay Z',
+          'score': 2,
         },
       ],
     },
@@ -96,15 +97,15 @@ class QuestionList {
       'answers': [
         {
           'text': 'Analyze This',
-          'score': 1,
+          'score': 3,
         },
         {
           'text': 'Groundhog Day',
-          'score': 1,
+          'score': 2,
         },
         {
           'text': 'Field of Dreams',
-          'score': 1,
+          'score': 4,
         },
         {
           'text': 'American Hustle',
@@ -117,16 +118,16 @@ class QuestionList {
       'answers': [
         {
           'text': 'I often put off making decisions',
-          'score': 1,
+          'score': 0,
         },
         {
           'text':
               'I spend a lot of time writing pros and cons before making a decision',
-          'score': 1,
+          'score': 3,
         },
         {
           'text': 'I trust myself to make decisions quickly and easily',
-          'score': 1,
+          'score': 6,
         },
       ],
     },

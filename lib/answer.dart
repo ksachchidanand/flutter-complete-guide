@@ -12,7 +12,7 @@ class Answer extends StatelessWidget {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 10.0),
       child: Card(
-        color: Colors.blue,
+        color: Colors.deepOrangeAccent,
         child: FlatButton(
           onPressed: answer,
           child: Padding(

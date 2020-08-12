@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_guide/questionList.dart';
 
+import 'package:flutter_complete_guide/questionList.dart';
 import 'package:flutter_complete_guide/quiz.dart';
 import 'package:flutter_complete_guide/result.dart';
 
@@ -17,8 +17,11 @@ class _MyAppState extends State<MyApp> {
   static var _questions = QuestionList().questionList;
 
   var _questionIndex = 0;
+  var _totalScore = 0;
 
-  void _answerChosen() {
+  void _answerChosen(int score) {
+    _totalScore += score;
+
     setState(() {
       _questionIndex++;
     });
@@ -27,16 +30,20 @@ class _MyAppState extends State<MyApp> {
   void _reset() {
     setState(() {
       _questionIndex = 0;
+      _totalScore = 0;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Colors.black,
         appBar: AppBar(
           title: Text('MyFirstApp'),
           leading: Icon(Icons.menu),
+          backgroundColor: Colors.deepOrangeAccent,
         ),
         body: _questionIndex < _questions.length
             ? Quiz(
@@ -44,7 +51,7 @@ class _MyAppState extends State<MyApp> {
                 questionIndex: _questionIndex,
                 answerChosen: _answerChosen,
               )
-            : Result(_reset),
+            : Result(_reset, _totalScore),
       ),
     );
   }
